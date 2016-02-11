@@ -27,15 +27,9 @@ object Ones {
     }
   }
 
-  implicit def onesList[T](implicit onesT: Ones[T]) = new Ones[List[T]] {
-    def ones(s: List[T]) = s.map(t => onesT.ones(t)).sum
+  implicit def onesSeq[T, S <% Seq[T]](implicit onesT: Ones[T]) = new Ones[S] {
+    def ones(s: S) = s.map(it => onesT.ones(it)).sum
   }
-
-  implicit def onesString[T] = new Ones[String] {
-    def ones(s: String) = s.map(t => onesChar.ones(t)).sum
-  }
-
-  //TODO: Work out how to generically handle all sequences.
 
   implicit def onesProduct[P <: Product, HL <: HList](implicit genP: Generic.Aux[P, HL], genHl: Ones[HL]) = new Ones[P] {
     def ones(p: P) = genHl.ones(genP.to(p))
