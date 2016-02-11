@@ -1,0 +1,5 @@
+package scalasyd
+
+object ones {
+  
+}
