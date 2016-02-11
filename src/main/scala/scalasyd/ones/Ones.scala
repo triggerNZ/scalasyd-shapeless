@@ -54,4 +54,6 @@ object Demo {
   Ones("HAPPY")
   Ones((1,2, "Hello"))
   Ones(Person("Tin", 180, 16))
+  Ones(Some(33))
+  Ones(Vector(0xFF, 0xFF))
 }
