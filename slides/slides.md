@@ -16,7 +16,7 @@ class: middle
 - github/twitter: @triggerNZ
 - Simple Machines
 - Commonwealth Bank
-
+- Shapeless contributor
 ---
 class: middle, center
 # Who am I
@@ -44,7 +44,7 @@ class: middle
 - Be cautious with fancy tricks
 - Use advanced language features sparingly
 - Write your code in a way that your colleagues can understand it
-- Focus on the business problem at hand and fear the general solution, since writing it is risky
+- Focus on the problem at hand and fear the general solution, since writing it may be risky
 
 ---
 class: middle, center
