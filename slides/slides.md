@@ -14,9 +14,9 @@ class: middle
 
 - Tin Pavlinic
 - github/twitter: @triggerNZ
-- Simple Machines
-- Commonwealth Bank
-- Shapeless contributor
+- Keen Scala hacker
+- Keen shapeless user
+- Small-time shapeless contributor
 ---
 class: middle, center
 # Who am I
@@ -24,6 +24,13 @@ class: middle, center
 ![Ventress](./Ventress-small.jpg)
 
 ---
+
+class: middle, center
+
+![Maul](./darthmaul-small.jpg)
+
+---
+
 class: middle, center
 
 # The Jedi Way
