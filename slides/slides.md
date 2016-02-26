@@ -67,7 +67,7 @@ class: middle
 - Embrace power
 - No empathy
 - Use the full language
-- The end of generic code and not repeating yourself justifies the means
+- The end goal of generic code and not repeating yourself justifies the means
 
 ---
 class: middle, center
