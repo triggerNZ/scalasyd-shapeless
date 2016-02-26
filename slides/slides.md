@@ -121,7 +121,7 @@ class: middle
   - HLists
   - Coproducts
   - Records
-- Typeclasses
+- Type classes
 - Recursion on types
 - Type inference
 - Implicit resolution (including dark arcane rules about resolution priority)
@@ -152,32 +152,32 @@ val x : Int :: String :: (String, String, Int) :: HNil =
 ---
 class: middle
 
-# Typeclasses
+# Type classes
 
 - A trait with one or more type parameters
 - Implicit instances of the trait for different types
-- Methods using it usually have implicit parameters with the typeclass
+- Methods using it usually have implicit parameters with the type class
 
 ---
 class: middle
 
-# Typeclasses
+# Type classes
 
 ```scala
 object DarthVader
 object Chewbacca
 
-trait MidichorianCount[T] {
+trait MidichlorianCount[T] {
   def count(in: T): Long
 }
 
-implicit object dvMCount extends MidichorianCount[DarthVader.type] {
+implicit object dvMCount extends MidichlorianCount[DarthVader.type] {
   def count(in: DarthVader.type) = 99999
 }
-implicit object cbMCount extends MidichorianCount[Chewbacca.type] {
+implicit object cbMCount extends MidichlorianCount[Chewbacca.type] {
   def count(in: Chewbacca.type) = 0
 }
-def count[T](t: T)(implicit mc: MidichorianCount[T]) = mc.count(t)
+def count[T](t: T)(implicit mc: MidichlorianCount[T]) = mc.count(t)
 
 
 scala> count(DarthVader)
@@ -187,7 +187,7 @@ res1: Long = 99999
 ---
 class: middle
 
-# Typeclasses
+# Type classes
 ## As type-level functions
 
 ```scala
@@ -247,7 +247,7 @@ class: middle
 
 ```scala
 def toggleTwice[T](in: T)
-  (tgl1: Toggle[T], tgl2: Toggle[tgl1.Out]): tgl2.Out =
+  (implicit tgl1: Toggle[T], tgl2: Toggle[tgl1.Out]): tgl2.Out =
     tgl2(tgl1(t))
 ```
 - DOESNT COMPILE!!!
@@ -285,7 +285,7 @@ trait LowPriority {
   def genericToggle[T]: Toggle[T] = ???
 }
 
-object HigherPriority {
+object HigherPriority extends LowPriority {
   def intToggle: Toggle[Int] = ???
 }
 ```
@@ -293,7 +293,7 @@ object HigherPriority {
 class: middle
 
 # Macros
-- Some typeclasses still need macros for computing generically
+- Some type classes still need macros for computing generically
 - Shapeless provides these for you, and they should be composable
 using other techniques
 - You shouldn't have to write them yourself
