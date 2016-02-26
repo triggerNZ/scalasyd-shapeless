@@ -241,8 +241,9 @@ class: middle
 - The option code above has inference bugs
 
 ---
-# Aux
+
 class: middle
+# Aux
 
 ```scala
 def toggleTwice[T](in: T)
@@ -266,13 +267,28 @@ def toggleTwice[T, O1, O2](in: T)
     tgl2(tgl1(t))
 ```
 ---
-
-# Implicit resolution
 class: middle
+# Implicit resolution.
+
 
 - Goes hand in hand with the recursion above
 - Most of the time is obvious but sometimes behaves strangely
+- Order matters. Use trait inheritance to prioritise. Subtraits have higher
+priority than supertraits.
 
+---
+class: middle
+# Implicit resolution.
+
+```scala
+trait LowPriority {
+  def genericToggle[T]: Toggle[T] = ???
+}
+
+object HigherPriority {
+  def intToggle: Toggle[Int] = ???
+}
+```
 ---
 class: middle
 
@@ -286,6 +302,7 @@ using other techniques
 
 ---
 class: middle, center
+
 LIVE CODING DEMO
 ================
 
