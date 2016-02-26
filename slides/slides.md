@@ -246,7 +246,7 @@ class: middle
 
 ```scala
 def toggleTwice[T](in: T)
-  (tgl1: Toggle[T], tgl2: Toggle[t1.Out]): tgl2.Out =
+  (tgl1: Toggle[T], tgl2: Toggle[tgl1.Out]): tgl2.Out =
     tgl2(tgl1(t))
 ```
 - DOESNT COMPILE!!!
