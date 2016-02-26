@@ -51,7 +51,7 @@ class: middle
 - Be cautious with fancy tricks
 - Use advanced language features sparingly
 - Write your code in a way that your colleagues can understand it
-- Focus on the problem at hand and fear the general solution, since writing it may be risky
+- Repeat yourself, rather than embracing the type level darkness
 
 ---
 class: middle, center
@@ -66,12 +66,13 @@ class: middle
 
 - Embrace power
 - No empathy
-- No restrictions
+- Use the full language
+- The end of generic code and not repeating yourself justifies the means
 
 ---
 class: middle, center
 
-# Type level programming - Dark magic
+# Dark magic
 
 ![Unlimited power](./power.jpg)
 
@@ -79,7 +80,8 @@ class: middle, center
 
 class: middle
 
-# Type level programming - Dark magic
+# Dark magic
+## Type level programming
 
 - Generic code
 - Like reflection, but at compile time
@@ -101,7 +103,7 @@ class: middle
 - JSON libraries (argonaut-shapeless, circe)
 - Database interaction libraries (doobie)
 - Serialization libraries (scodec)
-- Libraries including internal DSL's (coppersmith)
+- Libraries including internal DSL's (coppersmith, eventually)
 
 ---
 class: middle, center
@@ -185,7 +187,8 @@ res1: Long = 99999
 ---
 class: middle
 
-# Typeclasses as type-level functions
+# Typeclasses
+## As type-level functions
 
 ```scala
 trait Toggle[In]{
@@ -238,7 +241,7 @@ class: middle
 - The option code above has inference bugs
 
 ---
-# Type inference - Aux
+# Aux
 class: middle
 
 ```scala
@@ -251,7 +254,7 @@ def toggleTwice[T](in: T)
 ---
 class: middle
 
-# Type inference - Aux
+# Aux
 
 ```scala
 object Toggle {
@@ -259,7 +262,7 @@ object Toggle {
 }
 
 def toggleTwice[T, O1, O2](in: T)
-  (tgl1: Toggle.Aux[T, O1], tgl2: Toggle.Aux[O1, O2]): O2 =
+  (implicit tgl1: Toggle.Aux[T, O1], tgl2: Toggle.Aux[O1, O2]): O2 =
     tgl2(tgl1(t))
 ```
 ---
