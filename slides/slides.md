@@ -1,6 +1,6 @@
 
 class: middle, center
-### Once upon a time, in a galaxy far away...
+### A long time ago, in a galaxy far far away...
 
 ---
 class: middle, center
@@ -108,7 +108,7 @@ class: middle
 - JSON libraries (argonaut-shapeless, circe)
 - Database interaction libraries (doobie)
 - Serialization libraries (scodec)
-- Libraries including internal DSL's (coppersmith, eventually)
+- Libraries including internal DSLs
 
 ---
 class: middle, center
