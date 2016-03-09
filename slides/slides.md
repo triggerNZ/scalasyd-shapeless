@@ -18,16 +18,21 @@ class: middle
 - Keen shapeless user
 - Small-time shapeless contributor
 ---
+
 class: middle, center
+
 # Who am I
 
-![Ventress](./Ventress-small.jpg)
+![Maul](./darthmaul-small.jpg)
+
+### Probably not...
 
 ---
 
 class: middle, center
+# Who am I
 
-![Maul](./darthmaul-small.jpg)
+![Ventress](./Ventress-small.jpg)
 
 ---
 
@@ -216,9 +221,9 @@ class: middle
 # Recursion on types
 
 ```scala
-implicit def optionMCount[T](implicit mt: MidichorianCount[T]):
- MidichorianCount[Option[T]] =
-   new MidichorianCount[Option[T]] {
+implicit def optionMCount[T](implicit mt: MidichlorianCount[T]):
+ MidichlorianCount[Option[T]] =
+   new MidichlorianCount[Option[T]] {
      def count(in: Option[T]) = in match {
        case Some(t) => mt.count(t)
        case None => 0
@@ -236,7 +241,7 @@ class: middle
 # Type inference
 
 - There are weird rules
-- Interitance hurts
+- Inheritance hurts
 - There are workarounds
 - The option code above has inference bugs
 
