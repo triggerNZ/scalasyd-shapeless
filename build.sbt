@@ -4,5 +4,5 @@ libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.0"
 
 initialCommands in console := """
 import shapeless._
-import scalasyd.ones._
+import scalasyd.popcount._
 """
